@@ -23,6 +23,12 @@ function load_movies() {
     
     // YT link
     document.getElementById("YT_link").src="http://www.youtube.com/embed/JcpWXaA2qeg?rel=0";
+    
+    // title
+    document.getElementById("title").innerHTML = "Toy Story 3"
+    
+    // summary
+    document.getElementById("summary").innerHTML = "Pixar returns to their first success with Toy Story 3. The movie begins with Andy leaving for college and donating his beloved toys -- including Woody (Tom Hanks) and Buzz (Tim Allen) -- to a daycare. While the crew meets new friends, including Ken (Michael Keaton), they soon grow to hate their new surroundings and plan an escape. The film was directed by Lee Unkrich from a script co-authored by Little Miss Sunshine scribe Michael Arndt. ~ Perry Seibert, RoviPixar returns to their first success with Toy Story 3. The movie begins with Andy leaving for college and donating his beloved toys -- including Woody (Tom Hanks) and Buzz (Tim Allen) -- to a daycare. While the crew meets new friends, including Ken (Michael Keaton), they soon grow to hate their new surroundings and plan an escape. The film was directed by Lee Unkrich from a script co-authored by Little Miss Sunshine scribe Michael Arndt. ~ Perry Seibert, Rovi";
 
     //document.getElementById("footer").getElementsByTagName("img")[0].src = "aaaaa.gif";
 }
