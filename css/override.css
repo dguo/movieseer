@@ -9,8 +9,11 @@
 
 .thumbnails
 {
-    background-image: url(img/strip.png) 0 0 repeat-x;
-    
+    background: url("../img/strip.png") top center repeat-y;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .hero-unit

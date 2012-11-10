@@ -22,9 +22,10 @@
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
         <script src="js/bootstrap-transition.js"></script>
+        <script language="Javascript" src="js/loadmovies.js"></script>
     </head>
 
-    <body>
+    <body onload="load_movies()">
         
         <div class="navbar navbar-inverse navbar-fixed-top">
           <div class="navbar-inner">
@@ -39,15 +40,15 @@
               <div class="span2">
                 <div class="well sidebar-nav">
                     <div class = "thumbnails">
-                        <center><img src="img/1.jpg"/></center>
-                        <br><br>
-                        <center><img src="img/2.jpg"/></center>
-                        <br><br>
-                        <center><img src="img/3.jpg"/></center>
-                        <br><br>
-                        <center><img src="img/4.gif"/></center>
-                        <br><br>
-                        <center><img src="img/5.jpg"/></center>
+                        <center><img src="" id="thumbnail_1"/></center>
+                        <br>
+                        <center><img src="" id="thumbnail_2"/></center>
+                        <br>
+                        <center><img src="" id="thumbnail_3"/></center>
+                        <br>
+                        <center><img src="" id="thumbnail_4"/></center>
+                        <br>
+                        <center><img src="" id="thumbnail_5"/></center>
                     </div>              
                 </div><!--/.well -->
               </div><!--/span-->
@@ -55,15 +56,20 @@
               
               
               <div class="span10">
-                <div class="hero-unit">
-                    <img src="img/1-large.jpg"/>
-
+                <div class="hero-unit clearfix">
+                    <div style="float:left">
+                        <img src="" id="large_poster"/>
+                    </div>
+                    
+                    <div style="float:right";>
+                        <img src="img/1-large.jpg"/>
+                    </div>
                 </div>
                 
                 <div class="row-fluid">
                     
                   <div class="span4">
-                    <iframe width="400" height="315" src="http://www.youtube.com/embed/JcpWXaA2qeg?rel=0" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="400" height="297" src="http://www.youtube.com/embed/JcpWXaA2qeg?rel=0" frameborder="0" allowfullscreen></iframe>
                   </div><!--/span-->
                   
                   <div class="span3" style="margin-left: 70px;">
@@ -76,12 +82,9 @@
                     <h2>Heading</h2>
                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
                     <p><a class="btn" href="#">View details &raquo;</a></p>
-                  </div><!--/span-->
-                
+                  </div><!--/span-->  
+                </div><!--/span-->
               
-              
-              
-              </div><!--/span-->
             </div><!--/row-->
         </div><!--/.fluid-container-->
     </body>
