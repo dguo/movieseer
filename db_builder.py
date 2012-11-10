@@ -83,7 +83,7 @@ def main():
     db = connection.movies_database
     movies = db.movies
     
-    titles = get_movie_list(1996, 1997)
+    titles = get_movie_list(1995, 1996)
     
     # search for each movie in RT, and add the data to Mongo
     for title in titles:
