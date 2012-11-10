@@ -78,19 +78,25 @@ def get_movie_list(start_year, end_year):
 # main function
 def main():
 
+    # connect to Mongo, and open the "movies" table
     connection = Connection()
     db = connection.movies_database
     movies = db.movies
     
-    titles = get_movie_list(2011, 2012)
+    titles = get_movie_list(1996, 1997)
     
+    # search for each movie in RT, and add the data to Mongo
     for title in titles:
         movie_info = RT_to_dict(title)
         # make sure the movie was found in RT
         if len(movie_info) > 0:
-            movies.insert(movie_info)
+            # make sure the movie is not already in Mongo
+            current_id = movie_info['_id']
+            if movies.find({"_id": current_id}).count() == 0:
+                movies.insert(movie_info)
+                print "added to Mongo: " + movie_info['title']
         # RT api allows for a maximum of 10 calls per second    
-        time.sleep(0.2)
+        time.sleep(0.1)
     
 if __name__ == '__main__':
     main()

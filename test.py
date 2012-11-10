@@ -9,18 +9,12 @@ connection = Connection()
 db = connection.movies_database
 movies = db.movies
 
-for movie in movies.find():
-    print movie
+print movies.count()
 
-print "\n"
-
-for movie in movies.find():
-    movies.remove(movie)
-    
-for movie in movies.find():
-    print movie
+#for movie in movies.find():
+   # print movie['average_score']
     
 
-titles = get_movie_list(2000, 2012)
+#titles = get_movie_list(2000, 2012)
 
-print len(titles)
+#print len(titles)
