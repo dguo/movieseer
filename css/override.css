@@ -6,3 +6,16 @@
     text-align: center;
     margin: auto;
 }
+
+.thumbnails
+{
+    background-image: url(img/strip.png) 0 0 repeat-x;
+    
+}
+
+.hero-unit
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+}
