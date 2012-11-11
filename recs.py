@@ -75,42 +75,23 @@ def get_recs(info):
                     pref_score += 1
                 if movie['studio'] in dislikes:
                     pref_score -= 1            
+            
                 
             for person in movie['abridged_cast']:
+                print person['name']
                 if person['name'] in likes:
                     pref_score += 1
                 if person['name'] in dislikes:
                     pref_score -= 1
             
-            if pref_score > scores[0]:
-                scores[0] = pref_score
-                movie_list.pop(0)
-                movie_list.insert(0, movie)
-                
-            elif pref_score == scores[0]:
-                if (random.random() > 0.5):
-                    movie_list.pop(0)
-                    movie_list.insert(0, movie)
-                
-            elif pref_score > scores[1]:
-                scores[1] = pref_score
-                movie_list.pop(1)
-                movie_list.insert(1, movie)
-                
-            elif pref_score == scores[1]:
-                if (random.random() > 0.5):
-                    movie_list.pop(1)
-                    movie_list.insert(1, movie)
-                    
-            elif pref_score > scores[2]:
-                scores[2] = pref_score
-                movie_list.pop(2)
-                movie_list.insert(2, movie)
-                
-            elif pref_score == scores[2]:
-                if (random.random() > 0.5):
-                    movie_list.pop(2)
-                    movie_list.insert(2, movie)
+            
+            if pref_score > 0 and random.random > 0.3:    
+                randomIndex = random.randint(0, 4)
+                movie_list.pop(randomIndex)
+                movie_list.insert(randomIndex, movie)
+            
+            
+            
             
     # no prefs. get five random, high score movies
     else:
