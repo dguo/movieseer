@@ -1,29 +1,19 @@
 from flask import Flask, request, jsonify
+from pymongo import Connection
+from recs import get_recs
+import json
 
 app = Flask(__name__)
 
 @app.route('/process_data', methods=['POST'])
-def get_recs():
+def return_recs():
     info = request.form
-    
-    likes = info[0]
-    dislikes = info[1]
-    
-    new_movies = []
-    
-    if len(likes) > 0 or len(dislikes) > 0:
-        pass
-    
-    # no prefs. get five random, high score movies
-    else:
-        pass
-    
-    
-    return jsonify(new_movies)
-    
+    return jsonify(get_recs(info))
+
 @app.route('/')
 def start():
     return open("index.html").read()
 
 if __name__ == '__main__':
+    app.debug = True
     app.run()

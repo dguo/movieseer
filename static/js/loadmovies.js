@@ -1,33 +1,77 @@
-function load_movies() {
+var movies;
 
-    movies = []
-    
-    movies[0] = new Array();
-    
-    movies[0]['thumbnail'] = "http://content6.flixster.com/movie/11/13/43/11134356_mob.jpg";
-    
-    console.log("test1");
-    
-    // thumbnails
-    document.getElementById("thumbnail_1").src=movies[0]['thumbnail'];
-    document.getElementById("thumbnail_2").src="http://content6.flixster.com/movie/11/13/43/11134356_mob.jpg";
-    document.getElementById("thumbnail_3").src="http://content6.flixster.com/movie/11/13/43/11134356_mob.jpg";
-    document.getElementById("thumbnail_4").src="http://content6.flixster.com/movie/11/13/43/11134356_mob.jpg";
-    document.getElementById("thumbnail_5").src="http://content6.flixster.com/movie/11/13/43/11134356_mob.jpg";
+var info = {"dislike": "", "like": ""};
 
-    
-    // large poster
-    document.getElementById("large_poster").src="http://content6.flixster.com/movie/11/13/43/11134356_det.jpg";
-    
+var highlightIndex = 0;
 
+$(document).ready(function() {
     
-    // YT link
-    document.getElementById("YT_link").src="http://www.youtube.com/embed/JcpWXaA2qeg?rel=0";
+    $('#startover').on("click", function() {
+        info = {"dislike": "", "like": ""};
+        restart();
+    });
+    
+    $('#thumbnail_1').on("click", function() {
+        load_new(0);
+    });
+    
+    $('#thumbnail_2').on("click", function() {
+        load_new(1);
+    });
+    
+    $('#thumbnail_3').on("click", function() {
+        load_new(2);
+    });
+    
+    $('#thumbnail_4').on("click", function() {
+        load_new(3);
+    });
+    
+    $('#thumbnail_5').on("click", function() {
+        load_new(4);
+    });
+    
+    restart();
+});
+
+var restart = function() { $.post('../../process_data', info, function(data) {
+    // add thumbnails
+    for (var i = 1; i < 6; i++) {
+        var id = "thumbnail_" + i.toString();
+        document.getElementById(id).src = data['movies'][i - 1]['posters']['thumbnail'];
+    }
+    // add large poster
+    document.getElementById("large_poster").src = data['movies'][0]['posters']['detailed'];
+    // add Youtube video    
+    var link = "http://www.youtube.com/embed/" + data['movies'][0]['YT_id'] + "?rel=0";
+    document.getElementById("YT_link").src = link;
     
     // title
-    document.getElementById("title").innerHTML = "Toy Story 3"
+    document.getElementById("title").innerHTML = data['movies'][0]['title'];
     
     // summary
-    document.getElementById("summary").innerHTML = "Pixar returns to their first success with Toy Story 3. The movie begins with Andy leaving for college and donating his beloved toys -- including Woody (Tom Hanks) and Buzz (Tim Allen) -- to a daycare. While the crew meets new friends, including Ken (Michael Keaton), they soon grow to hate their new surroundings and plan an escape. The film was directed by Lee Unkrich from a script co-authored by Little Miss Sunshine scribe Michael Arndt. ~ Perry Seibert, Rovi";
-    //document.getElementById("footer").getElementsByTagName("img")[0].src = "aaaaa.gif";
+    document.getElementById("summary").innerHTML = data['movies'][0]['synopsis'];
+    
+    movies = data;
+    });
+};
+
+function load_new(i) {
+    // add large poster
+    document.getElementById("large_poster").src = movies['movies'][i]['posters']['detailed'];
+    
+    // add Youtube video    
+    var link = "http://www.youtube.com/embed/" + movies['movies'][i]['YT_id'] + "?rel=0";
+    document.getElementById("YT_link").src = link;
+    
+    // title
+    document.getElementById("title").innerHTML = movies['movies'][i]['title'];
+    
+    // summary
+    if (movies['movies'][i]['synopsis'].length > 10) {
+        document.getElementById("summary").innerHTML = movies['movies'][i]['synopsis'];
+    }
+    else {
+        document.getElementById("summary").innerHTML = movies['movies'][i]['critics_consensus'];
+    }
 }
