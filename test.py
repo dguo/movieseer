@@ -17,7 +17,7 @@ i = 0
 
 
 for movie in movies.find():
-    if movie['posters']['thumbnail']== "http://content8.flixster.com/movie/25/91/259198_mob.jpg":
+    if movie['year'] < 2000:
     #if movie['title'] == 'My Voyage to Italy':
         print movie['title']
         movies.remove({

@@ -28,7 +28,7 @@ $(document).ready(function() {
         $('#YT_link').fadeOut('slow', function() {
         });
         var timeoutID = setTimeout(restart, 500);
-        var timeoutID = setTimeout(continueExecution, 500);
+        var timeoutID = setTimeout(continueExecution, 1000);
     });
     
     $('#rating').on("click", function() {
