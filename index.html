@@ -26,7 +26,6 @@
         <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
         <script language="Javascript" src="static/js/loadmovies.js"></script>
-        <script src="static/css/animate.css"></script>
 
     </head>
 
@@ -40,7 +39,7 @@
           </div>
         </div>
         
-        <div class="container-fluid">
+        <div class="container-fluid"  style="margin-top:10px;">
             <div class="row-fluid">
               <div class="span2">
                 <div class="well sidebar-nav">
@@ -60,16 +59,16 @@
               
               
               
-              <div class="span10" >
-                <div class="hero-unit clearfix">
-                    <div style="float:left">
+              <div class="span10">
+                <div class="hero-unit clearfix" id="hero">
+                    <div style="float:left; margin-left:80px;">
                         <img src="" id="large_poster"/>
                     </div>
                     
                     <div class="info_pane" style="margin-left: 250px;">
                         <h1 id="title"></h1>
                         <center><div id="summary"></div></center>
-                        <center><div class="tags_div">
+                        <center><div class="tags_div" style="padding-left: 90px;">
                             <dl>
                                 <dt>Rating:</dt>
                                 <span class="badge" id="rating"></span>
@@ -83,12 +82,18 @@
                                 <span class="badge" id="director"></span> 
                             </dl> 
                             <dl>
-                                <dt>Studio:</dt>
-                                <span class="badge" id="studio"></span>
                                 <dt>Genre:</dt>
                                 <span class="badge" id="genre"></span>
+                                <dt>Studio:</dt>
+                                <span class="badge" id="studio"></span>
+
                             </dl>
-                        </div></center>
+                            <dl>
+                                <dt>Cast:</dt>
+                                <center><span class="badge" id="cast1"></span></center>
+                                <center><span class="badge" id="cast2"></span></center>
+                            </dl>
+                        </div>
                     </div>
                 </div>
                 
@@ -100,20 +105,15 @@
                   
                   <div class="span3" style="margin-left: 100px;">
                     <center><button class="btn btn-small btn-danger" type="button" id="dislike">It's no good!</button></center>
-                        <div class="pref_box dislike">
-                            <span class="badge">Family & Animation</span>
-                            <br><br>
-                            <span class="badge">Family & Animation</span>
-                            <br><br>
-                            <span class="badge">Family & Animation</span>
+                        <div class="pref_box dislike" id="dislike_box">
                         </div>
                     <br>
                     <center><p><a class="btn btn-inverse" href="#" id="startover"><i class="icon-refresh icon-white"></i> Start Over</a></p></center>
                   </div><!--/span-->
                   
                   <div class="span3">
-                    <center><button class="btn btn-small btn-success" type="button" id="like">It's no good!</button></center>
-                        <div class="pref_box like">
+                    <center><button class="btn btn-small btn-success" type="button" id="like">I like it!</button></center>
+                        <div class="pref_box like" id="like_box">
                             
                         </div>
                     <br>

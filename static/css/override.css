@@ -29,7 +29,8 @@
     height: 210px;
     border-radius: 6px 6px 6px 6px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: -10px;
+    overflow-y: auto;
 }
 
 .like
@@ -48,7 +49,6 @@
 {
     width: 800px;
     height: 260px;
-    background-color: #FFFFFF;
     border-radius: 6px 6px 6px 6px;
 }
 
@@ -82,7 +82,7 @@
 dl {
     float: left;
     margin-top: 0px;
-    margin-right: 25px;
+    margin-right: 60px;
     width: 120px;
 }
 

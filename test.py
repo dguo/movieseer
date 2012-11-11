@@ -17,8 +17,8 @@ i = 0
 
 
 for movie in movies.find():
-    if movie['posters']['thumbnail'] == 'http://images.rottentomatoescdn.com/images/redesign/poster_default.gif':
-    #if movie['title'] == 'Call Me Kuchu':
+    if movie['posters']['thumbnail']== "http://content8.flixster.com/movie/25/91/259198_mob.jpg":
+    #if movie['title'] == 'My Voyage to Italy':
         print movie['title']
         movies.remove({
             '_id': movie['_id']

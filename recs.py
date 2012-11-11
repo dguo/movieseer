@@ -8,6 +8,9 @@ def get_recs(info):
     likes = info["like"]
     dislikes = info["dislike"]
     
+    likes = likes.split(",")
+    dislikes = dislikes.split(",")
+    
     print likes
     print dislikes
     
@@ -21,7 +24,8 @@ def get_recs(info):
     movies = db.movies 
     
     # if there are any preferences, use them to recommend movies
-    if len(likes) > 0 or len(dislikes) > 0:
+    if len(likes) > 1 or len(dislikes) > 1:
+        # first populate the list with five random movies
         i = 0
         for movie in movies.find( {"average_score": {"$gt": 80}} ):
           if i < 5:
@@ -32,6 +36,19 @@ def get_recs(info):
                 randomIndex = random.randint(0, 4)
                 movie_list.pop(randomIndex)
                 movie_list.append(movie)
+                
+        # then replace the first three with preferences
+        for movie in movies.find():
+            pref_score = 0;
+            if movie['average_score'] in likes:
+                pref_score += 1
+            if movie['average_score'] in dislikes:
+                pref_score -= 1
+            if movie['average_score'] in likes:
+                pref_score += 1
+            if movie['average_score'] in dislikes:
+                pref_score -= 1
+
     
     # no prefs. get five random, high score movies
     else:
