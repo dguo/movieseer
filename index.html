@@ -26,6 +26,7 @@
         <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
         <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
         <script language="Javascript" src="static/js/loadmovies.js"></script>
+        <script src="static/css/animate.css"></script>
 
     </head>
 
@@ -59,7 +60,7 @@
               
               
               
-              <div class="span10">
+              <div class="span10" >
                 <div class="hero-unit clearfix">
                     <div style="float:left">
                         <img src="" id="large_poster"/>
@@ -71,21 +72,21 @@
                         <center><div class="tags_div">
                             <dl>
                                 <dt>Rating:</dt>
-                                <span class="badge">87</span>
+                                <span class="badge" id="rating"></span>
                                 <dt>Year:</dt>
-                                <span class="badge" id="draggable">2008</span>
+                                <span class="badge" id="year"></span>
                             </dl>
                             <dl style="margin-left: -30px;">
                                 <dt>Running time:</dt>
-                                <span class="badge">2h 32 m</span>
+                                <span class="badge" id="time"></span>
                                 <dt>Director:</dt>
-                                <span class="badge">Stanley Kubrick</span> 
+                                <span class="badge" id="director"></span> 
                             </dl> 
                             <dl>
                                 <dt>Studio:</dt>
-                                <span class="badge">Walt Disney Pictures</span>
+                                <span class="badge" id="studio"></span>
                                 <dt>Genre:</dt>
-                                <span class="badge">Family & Animation</span>
+                                <span class="badge" id="genre"></span>
                             </dl>
                         </div></center>
                     </div>
@@ -98,7 +99,7 @@
                   </div><!--/span-->
                   
                   <div class="span3" style="margin-left: 100px;">
-                    <center><span class="label label-important">No good!</span></center>
+                    <center><button class="btn btn-small btn-danger" type="button" id="dislike">It's no good!</button></center>
                         <div class="pref_box dislike">
                             <span class="badge">Family & Animation</span>
                             <br><br>
@@ -111,12 +112,12 @@
                   </div><!--/span-->
                   
                   <div class="span3">
-                    <center><span class="label label-success">I like it!</span></center>
+                    <center><button class="btn btn-small btn-success" type="button" id="like">It's no good!</button></center>
                         <div class="pref_box like">
                             
                         </div>
                     <br>
-                    <center><p><a class="btn btn-primary" href="#"><i class="icon-film icon-white"></i> Get New Results</a></p></center>
+                    <center><p><a class="btn btn-primary" href="#" id="newresults"><i class="icon-film icon-white"></i> Get New Results</a></p></center>
                   </div><!--/span-->
                   
                 </div><!--/span-->
