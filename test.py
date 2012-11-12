@@ -17,7 +17,7 @@ i = 0
 
 
 for movie in movies.find():
-    if movie['year'] < 2000:
+    if movie['title'] == "Hear and Now":
     #if movie['title'] == 'My Voyage to Italy':
         print movie['title']
         movies.remove({

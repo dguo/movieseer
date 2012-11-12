@@ -85,7 +85,7 @@ def get_recs(info):
                     pref_score -= 1
             
             
-            if pref_score > 0 and random.random > 0.3:    
+            if pref_score > 0 and random.random > 0.5:    
                 randomIndex = random.randint(0, 4)
                 movie_list.pop(randomIndex)
                 movie_list.insert(randomIndex, movie)

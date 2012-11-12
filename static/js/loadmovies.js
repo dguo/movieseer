@@ -16,6 +16,8 @@ $(document).ready(function() {
         $('#dislike_box').empty();
         $('#hero').fadeOut('slow', function() {
         });
+        $('#large_poster').fadeOut('slow', function() {
+        });
         $('#YT_link').fadeOut('slow', function() {
         });
         var timeoutID = setTimeout(restart, 500);
@@ -24,6 +26,8 @@ $(document).ready(function() {
     
     $('#newresults').on("click", function() {
         $('#hero').fadeOut('slow', function() {
+        });
+        $('#large_poster').fadeOut('slow', function() {
         });
         $('#YT_link').fadeOut('slow', function() {
         });
@@ -102,6 +106,8 @@ $(document).ready(function() {
     $('#thumbnail_1').on("click", function() {
         $('#hero').fadeOut('slow', function() {
         });
+        $('#large_poster').fadeOut('slow', function() {
+        });        
         $('#YT_link').fadeOut('slow', function() {
         });
         currIndex = 0;
@@ -111,6 +117,8 @@ $(document).ready(function() {
     $('#thumbnail_2').on("click", function() {
         $('#hero').fadeOut('slow', function() {
         });
+        $('#large_poster').fadeOut('slow', function() {
+        });       
         $('#YT_link').fadeOut('slow', function() {
         });
         currIndex = 1;
@@ -120,6 +128,8 @@ $(document).ready(function() {
     $('#thumbnail_3').on("click", function() {
         $('#hero').fadeOut('slow', function() {
         });
+        $('#large_poster').fadeOut('slow', function() {
+        });       
         $('#YT_link').fadeOut('slow', function() {
         });       
         currIndex = 2;
@@ -128,6 +138,8 @@ $(document).ready(function() {
     
     $('#thumbnail_4').on("click", function() {
         $('#hero').fadeOut('slow', function() {
+        });
+        $('#large_poster').fadeOut('slow', function() {
         });
         $('#YT_link').fadeOut('slow', function() {
         });
@@ -138,6 +150,8 @@ $(document).ready(function() {
     $('#thumbnail_5').on("click", function() {
         $('#hero').fadeOut('slow', function() {
         });
+        $('#large_poster').fadeOut('slow', function() {
+        });       
         $('#YT_link').fadeOut('slow', function() {
         });
         currIndex = 4;
@@ -247,6 +261,8 @@ function continueExecution() {
     $('#hero').fadeIn('slow', function() {
         // Animation complete.
     });
+    $('#large_poster').fadeIn('slow', function() {
+    });   
     $('#YT_link').fadeIn('slow', function() {
         // Animation complete.
     });
