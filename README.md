@@ -28,3 +28,7 @@ several seconds (though it felt like an eternity). The results eventually
 appeared. I later realized I had forgotten to remove a `print` statement that
 ran in a loop. If you look at the commit history, there's a commit with a
 "demo version (need to remove print statements)" messsage. Lesson learned!
+
+## License
+
+MIT
